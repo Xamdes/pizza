@@ -5,12 +5,8 @@ $(function()
 {
   $("#input-form").submit(function(event){
     event.preventDefault();
-    var newPizza = new Pizza();
-
-    newPizza.size = getSize();
-    newPizza.toppings = getToppings();
-    console.log(newPizza);
-
+    var newPizza = new Pizza(getToppings(),getSize());
+    console.log(newPizza.cost());
   });
 });
 
@@ -35,19 +31,23 @@ function getToppings()
 
 //Back End
 
-function Pizza()
+function Pizza(arrToppings,arrSize)
 {
-  toppings = [];
-  size = [];
-  cost = 0;
+  this.toppings = arrToppings;
+  this.size = arrSize;
+  this.price = 0;
 }
 
 Pizza.prototype.cost = function()
 {
-  this.toppings.forEach(functions(topping))
+  var sum = 0;
+  this.toppings.forEach(function(topping)
   {
-    this.cost += topping[1];
-  }
+    sum += topping[1];
+  });
+  sum += this.size[1];
+  this.price = sum;
+  return this.price;
 }
 
 Pizza.prototype.reset = function()
@@ -55,4 +55,5 @@ Pizza.prototype.reset = function()
   this.toppings = [];
   this.size = "small";
   this.cost = 0;
+  return true;
 }
