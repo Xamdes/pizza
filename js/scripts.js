@@ -29,6 +29,7 @@ function getToppings()
 
 function output(newPizza)
 {
+  $("#output-size").text(newPizza.size[0].toLowerCase());
   $("#output-cost").text("$"+newPizza.price.toString());
   var toppings = ["<li>Cheese</li>"];
   newPizza.toppings.forEach(function(topping)
