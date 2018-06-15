@@ -1,12 +1,10 @@
-
-
-
 $(function()
 {
   $("#input-form").submit(function(event){
     event.preventDefault();
     var newPizza = new Pizza(getToppings(),getSize());
-    console.log(newPizza.cost());
+    newPizza.cost();
+    output(newPizza);
   });
 });
 
@@ -27,6 +25,13 @@ function getToppings()
     selected.push(toppings[parseInt($(this).val())]);
   });
   return selected;
+}
+
+function output(newPizza)
+{
+  $("#output-pizza").text("pizza");
+  $("#output-cost").text("$"+newPizza.price.toString());
+  $("#details").show();
 }
 
 //Back End
