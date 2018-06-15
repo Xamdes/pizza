@@ -34,3 +34,7 @@ body  {
   background-color: Aqua;
   font-size: 1em;
 }
+
+.initial-hide {
+  display: none;
+}
