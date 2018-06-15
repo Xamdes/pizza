@@ -10,24 +10,26 @@
   </head>
   <body class="container-fluid">
     <h1 class="jumbotron back-col-blue center-text">Jimmy's Express Pizza Delivery Service</h1>
-    <form id="input-form" class="panel panel-info panel-modifier back-col-blue" action="index.html" method="post">
-      <div class=form-group>
-        <label for="user-name">Name: </label>
-        <input id="user-name" type="text">
-      </div>
-      <div class=form-group>
-        +$1 <input type="checkbox" name="input-toppings" value="0"> Peperoni<br>
-        +$1 <input type="checkbox" name="input-toppings" value="1"> Onions<br>
-        +$2 <input type="checkbox" name="input-toppings" value="2"> Black Olives<br>
-        +$2 <input type="checkbox" name="input-toppings" value="3"> Green Peppers
-      </div>
-      <div class=form-group>
-        +$4  <input type="radio" name="input-size" value="0" checked> Small<br>
-        +$7  <input type="radio" name="input-size" value="1"> Medium<br>
-        +$10 <input type="radio" name="input-size" value="2"> Large
-      </div>
-      <button type="submit" name="button" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="panel panel-info panel-modifier back-col-blue">
+      <p>Please select the toppings and size you would like for your pizza.</p>
+      <h4>Toppings:</h4>
+      <form id="input-form" action="index.html" method="post">
+        <div class=form-group>
+          +$1 <input type="checkbox" name="input-toppings" value="0"> Peperoni<br>
+          +$1 <input type="checkbox" name="input-toppings" value="1"> Onions<br>
+          +$2 <input type="checkbox" name="input-toppings" value="2"> Black Olives<br>
+          +$2 <input type="checkbox" name="input-toppings" value="3"> Green Peppers
+        </div>
+        <h4>Size:</h4>
+        <div class=form-group>
+          +$4  <input type="radio" name="input-size" value="0" checked> Small<br>
+          +$7  <input type="radio" name="input-size" value="1"> Medium<br>
+          +$10 <input type="radio" name="input-size" value="2"> Large
+        </div>
+        <button type="submit" name="button" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
     <div id="details" class="panel panel-info panel-modifier back-col-blue initial-hide">
         <h4>Your <span id="output-pizza"></span> will cost <span id="output-cost"></span></h4>
     </div>
