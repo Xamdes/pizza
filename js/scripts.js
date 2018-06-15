@@ -29,8 +29,13 @@ function getToppings()
 
 function output(newPizza)
 {
-  $("#output-pizza").text("pizza");
   $("#output-cost").text("$"+newPizza.price.toString());
+  var toppings = ["<li>Cheese</li>"];
+  newPizza.toppings.forEach(function(topping)
+  {
+    toppings.push("<li>"+topping[0]+"</li>");
+  });
+  $("#topping-list").html(toppings);
   $("#details").show();
 }
 
